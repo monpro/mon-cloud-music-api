@@ -10,9 +10,9 @@ import org.springframework.http.MediaType;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
-import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
-import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
+import static org.hamcrest.Matchers.containsString;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @RunWith(SpringRunner.class)
@@ -24,9 +24,9 @@ public class HomeControllerTest {
 
   @Test
   public void getHomeIndex() throws Exception {
-    mockMvc
-        .perform(MockMvcRequestBuilders.get("/notExist").accept(MediaType.APPLICATION_JSON))
-        .andDo(print())
-        .andExpect(status().is4xxClientError());
+    this.mockMvc
+        .perform(MockMvcRequestBuilders.get("/home").accept(MediaType.APPLICATION_JSON))
+        .andExpect(status().isOk())
+        .andExpect(content().string(containsString("\"sunny day\"")));
   }
 }

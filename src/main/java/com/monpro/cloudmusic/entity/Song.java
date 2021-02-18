@@ -16,7 +16,7 @@ public class Song {
   @Id
   @GeneratedValue
   @Column(nullable = false)
-  private Integer id;
+  private Long id;
 
   @Basic
   @Column(name = "name", nullable = false)
@@ -33,4 +33,15 @@ public class Song {
   @Basic
   @Column(name = "musicUrl", nullable = false)
   private String musicUrl;
+
+  @Override
+  public String toString() {
+    return "Song{" +
+            "id=" + id +
+            ", name='" + name + '\'' +
+            ", playTimes=" + playTimes +
+            ", imgUrl='" + imgUrl + '\'' +
+            ", musicUrl='" + musicUrl + '\'' +
+            '}';
+  }
 }

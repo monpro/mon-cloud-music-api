@@ -24,7 +24,7 @@ public class Album {
   @Id
   @GeneratedValue
   @Column(nullable = false)
-  private Integer id;
+  private Long id;
 
   @Basic
   @Column(name = "userId", nullable = false)

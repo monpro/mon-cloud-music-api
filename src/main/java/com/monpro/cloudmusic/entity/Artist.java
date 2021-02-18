@@ -25,7 +25,7 @@ public class Artist {
   @Id
   @GeneratedValue
   @Column(nullable = false)
-  private Integer id;
+  private Long id;
 
   @Basic
   @Column(name = "name", nullable = false)

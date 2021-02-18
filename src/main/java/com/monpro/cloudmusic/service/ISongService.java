@@ -6,8 +6,8 @@ import java.util.List;
 
 public interface ISongService {
   /**
-   * @param userId
+   * @param
    * @return popular songs at home page for this user Should produced from recommendation system
    */
-  List<Song> getHomePopularSong(Long userId);
+  List<Song> getHomePopularSong();
 }

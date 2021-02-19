@@ -10,4 +10,6 @@ public interface ISongService {
    * @return popular songs at home page for this user Should produced from recommendation system
    */
   List<Song> getHomePopularSong();
+
+  List<Song> getNewAddedSong();
 }

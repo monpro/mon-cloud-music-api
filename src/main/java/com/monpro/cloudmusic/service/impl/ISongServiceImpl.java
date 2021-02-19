@@ -22,4 +22,9 @@ public class ISongServiceImpl implements ISongService {
   public List<Song> getHomePopularSong() {
     return songDao.findTop5ByOrderByPlayTimesDesc();
   }
+
+  @Override
+  public List<Song> getNewAddedSong() {
+    return songDao.findTop10ByOrderByAddDateDesc();
+  }
 }

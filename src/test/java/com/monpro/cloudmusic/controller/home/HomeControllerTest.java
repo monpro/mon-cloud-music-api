@@ -27,6 +27,7 @@ public class HomeControllerTest {
     this.mockMvc
         .perform(MockMvcRequestBuilders.get("/home").accept(MediaType.APPLICATION_JSON))
         .andExpect(status().isOk())
-        .andExpect(content().string(containsString("\"sunny day\"")));
+        .andExpect(content().string(containsString("popularSongs")))
+        .andExpect(content().string(containsString("newAddedSongs")));
   }
 }

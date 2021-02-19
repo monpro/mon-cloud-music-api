@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 
 @Data
 @NoArgsConstructor
@@ -34,14 +35,28 @@ public class Song {
   @Column(name = "musicUrl", nullable = false)
   private String musicUrl;
 
+  @Basic
+  @Column(name = "addDate", columnDefinition = "DATE", nullable = false)
+  private LocalDate addDate;
+
   @Override
   public String toString() {
-    return "Song{" +
-            "id=" + id +
-            ", name='" + name + '\'' +
-            ", playTimes=" + playTimes +
-            ", imgUrl='" + imgUrl + '\'' +
-            ", musicUrl='" + musicUrl + '\'' +
-            '}';
+    return "Song{"
+        + "id="
+        + id
+        + ", name='"
+        + name
+        + '\''
+        + ", playTimes="
+        + playTimes
+        + ", imgUrl='"
+        + imgUrl
+        + '\''
+        + ", musicUrl='"
+        + musicUrl
+        + '\''
+        + ", addDate="
+        + addDate
+        + '}';
   }
 }

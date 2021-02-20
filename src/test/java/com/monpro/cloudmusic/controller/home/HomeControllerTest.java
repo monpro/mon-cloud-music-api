@@ -28,6 +28,8 @@ public class HomeControllerTest {
         .perform(MockMvcRequestBuilders.get("/home").accept(MediaType.APPLICATION_JSON))
         .andExpect(status().isOk())
         .andExpect(content().string(containsString("popularSongs")))
-        .andExpect(content().string(containsString("newAddedSongs")));
+        .andExpect(content().string(containsString("newAddedSongs")))
+        .andExpect(content().string(containsString("newReleasedAlbums")))
+        .andExpect(content().string(containsString("popularAlbums")));
   }
 }

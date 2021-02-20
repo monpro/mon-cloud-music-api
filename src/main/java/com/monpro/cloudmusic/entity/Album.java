@@ -27,7 +27,7 @@ public class Album {
   private Long id;
 
   @Basic
-  @Column(name = "userId", nullable = false)
+  @Column(name = "user_id", nullable = false)
   private Integer userId;
 
   @Basic

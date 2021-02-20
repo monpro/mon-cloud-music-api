@@ -39,6 +39,10 @@ public class Song {
   @Column(name = "add_date", columnDefinition = "DATE", nullable = false)
   private LocalDate addDate;
 
+  @Basic
+  @Column(name = "album_id", nullable = false)
+  private Long albumID;
+
   @Override
   public String toString() {
     return "Song{"

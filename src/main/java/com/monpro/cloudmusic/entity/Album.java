@@ -35,18 +35,18 @@ public class Album {
   private String name;
 
   @Basic
-  @Column(name = "releaseDate", columnDefinition = "DATE", nullable = false)
+  @Column(name = "release_date", columnDefinition = "DATE", nullable = false)
   private LocalDate releaseDate;
 
   @Basic
-  @Column(name = "playTimes", nullable = false)
+  @Column(name = "play_times", nullable = false)
   private Integer playTimes;
 
   @Basic
-  @Column(name = "contentUrl", nullable = false)
+  @Column(name = "content_url", nullable = false)
   private String contentUrl;
 
   @Basic
-  @Column(name = "imgUrl", nullable = false)
+  @Column(name = "img_url", nullable = false)
   private String imgUrl;
 }

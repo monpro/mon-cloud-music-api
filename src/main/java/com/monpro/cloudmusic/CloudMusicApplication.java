@@ -10,6 +10,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
 import java.time.LocalDate;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 @SpringBootApplication
 public class CloudMusicApplication {
@@ -23,11 +25,11 @@ public class CloudMusicApplication {
   @Bean
   public CommandLineRunner commandLineRunner(SongDao songDao) {
     return (args) -> {
-      songDao.save(new Song(1l, "my heart will go one", 55, "", "", LocalDate.of(2021, 11, 12)));
-      songDao.save(new Song(2l, "good time", 66, "", "", LocalDate.of(2021, 12, 12)));
-      songDao.save(new Song(3l, "sing", 77, "", "", LocalDate.of(2021, 7, 12)));
-      songDao.save(new Song(4l, "feel it still", 88, "", "", LocalDate.of(2021, 8, 12)));
-      songDao.save(new Song(5l, "sunny day", 99, "", "", LocalDate.of(2021, 11, 9)));
+      songDao.save(new Song(1l, "my heart will go one", 55, "", "", LocalDate.of(2021, 11, 12), 1l));
+      songDao.save(new Song(2l, "good time", 66, "", "", LocalDate.of(2021, 12, 12), 2l));
+      songDao.save(new Song(3l, "sing", 77, "", "", LocalDate.of(2021, 7, 12), 3l));
+      songDao.save(new Song(4l, "feel it still", 88, "", "", LocalDate.of(2021, 8, 12), 1l));
+      songDao.save(new Song(5l, "sunny day", 99, "", "", LocalDate.of(2021, 11, 9), 2l));
       logger.info("find all songs by calling songDao.findAll()");
       for (Song song : songDao.findAll()) {
         logger.info(song.toString());

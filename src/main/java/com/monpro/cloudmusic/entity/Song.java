@@ -24,20 +24,24 @@ public class Song {
   private String name;
 
   @Basic
-  @Column(name = "playTimes", nullable = false)
+  @Column(name = "play_times", nullable = false)
   private Integer playTimes;
 
   @Basic
-  @Column(name = "imgUrl", nullable = false)
+  @Column(name = "img_url", nullable = false)
   private String imgUrl;
 
   @Basic
-  @Column(name = "musicUrl", nullable = false)
+  @Column(name = "music_url", nullable = false)
   private String musicUrl;
 
   @Basic
-  @Column(name = "addDate", columnDefinition = "DATE", nullable = false)
+  @Column(name = "add_date", columnDefinition = "DATE", nullable = false)
   private LocalDate addDate;
+
+  @Basic
+  @Column(name = "album_id", nullable = false)
+  private Long albumID;
 
   @Override
   public String toString() {
